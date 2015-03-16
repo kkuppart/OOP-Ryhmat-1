@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Scanner;
 //suvatekst, et vaadata kuidas git töötab1
 public class Levik {
-	public static void main(String[] argv) {
-
+	public static void main(String[] argv) throws Exception { 
+	boolean kasveel=true;
+	while (kasveel) {
 		System.out
 				.println("tere! See on lihtne programm viiruste leviku simuleerimiseks."
 						+ " Populatsiooni kujutatakse ette ruuduna, millel asetsevad mingi"
@@ -21,7 +24,13 @@ public class Levik {
 						+ "mõjutab suremust. ");
 		System.out
 				.println("----------------------------------------------------------------------------------------------------------------------");
-
+		String pwd= System.getProperty("user.dir");
+		System.out.println(pwd);
+		File file =new File(pwd+"/logi.txt");
+		PrintWriter pw= new PrintWriter("logi.txt");
+		pw.println("tere");
+		//pw.close();
+		
 		Scanner scan = new Scanner(System.in);
 
 		System.out
@@ -49,9 +58,13 @@ public class Levik {
 
 		System.out.println("inimeste arv alguses on " + pop.inimeste_arv);
 
-		int nakatanute_arv = 3; // võtame alguses mingi arvu nakatunuid
-
-		for (int i = 0; i < nakatanute_arv; i++) { // ja märgime suvalises kohas
+		int nakatunute_arv;
+		if (alguses/10>1)
+				 nakatunute_arv=alguses/10;
+		else  	
+			nakatunute_arv=1;		// võtame alguses mingi arvu nakatunuid
+				
+		for (int i = 0; i < nakatunute_arv; i++) { // ja märgime suvalises kohas
 													// asetsevate inimeste välja
 													// on_nakatunud Tõeseks.
 			int a = (int) Math.floor(Math.random() * pop.ulatus);
@@ -64,9 +77,10 @@ public class Levik {
 		// Pop.inimesed[Math.round(int)(Math.random()*Pop.ulatus)-1][Math.random()*Pop.ulatus-1].on_nakatanud
 		// = true;
 
-		
+		int s =0;
 
-		for (int k = 0; k < 1000; k++) { // k loeb mitu tsüklit me teeme
+		for (int k = 0; pop.inimeste_arv!=s; k++) { // k loeb mitu tsüklit me teeme
+			s=pop.inimeste_arv;
 			ArrayList<ArrayList<Integer>> nakatunud = new ArrayList<ArrayList<Integer>>();
 
 			for (int i = 0; i < pop.ulatus; i++) { // i ja j on rea - ja
@@ -133,6 +147,7 @@ public class Levik {
 					if (pop.inimesed[i][j] != null
 							&& pop.inimesed[i][j].on_nakatanud == true) {
 						pop.inimesed[i][j].tapa();
+						
 					}
 				}
 			}
@@ -144,10 +159,33 @@ public class Levik {
 							1)].on_nakatanud = true;
 				}
 			}
-
+			pw.print(k);
+			pw.print(" ");
+			pw.print("surnud on");
+			pw.print(" ");
+			pw.println(alguses - pop.inimeste_arv );
 		}
 		System.out.println("inimeste arv lõpus on " + pop.inimeste_arv);
 		System.out.println("suremus on " + ((float) alguses - pop.inimeste_arv)
 				* 100 / alguses + "%");
+		pw.close();
+		System.out.println("Kas soovid simulatsiooni korrata?"+"\n"+"Kirjuta jah kui soovid")
+			;
+			String kastahab= scan.next();
+					if  (kastahab.equals("jah")) 
+						kasveel=true;
+					else
+						break;
+												{
+						
+					
+}
+
+}
 	}
 }
+
+
+	
+
+
