@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//suvatekst, et vaadata kuidas git töötab1
 public class Levik {
 	public static void main(String[] argv) {
 

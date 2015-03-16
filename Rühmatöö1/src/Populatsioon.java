@@ -1,10 +1,10 @@
 public class Populatsioon {
 
-	int ulatus; // näitab, kui suur on ruudu pikkus, milles populatsioon asetseb
-	double tihedus; // näitab, kui suure tõenäosusega luuakse mingisse
+	int ulatus; // nÃ¤itab, kui suur on ruudu pikkus, milles populatsioon asetseb
+	double tihedus; // nÃ¤itab, kui suure tÃµenÃ¤osusega luuakse mingisse
 					// konkreetsesse ruudustikku ruutu inimene
 
-	Isik[][] inimesed; // loob objektidest Isik kahemõõtmelise järjendi
+	Isik[][] inimesed; // loob objektidest Isik kahemÃµÃµtmelise jÃ¤rjendi
 
 	int inimeste_arv;
 

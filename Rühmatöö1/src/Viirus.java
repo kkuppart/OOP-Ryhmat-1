@@ -1,7 +1,7 @@
 public class Viirus {
 
-	double suremus;				//suremus, praegu ei kasutata, väärtus on praegu 1.0
-	double nakatumus;			//nakatumus, kui suure tõenäosusega viirus kandub edasi ühekordsel kokkupuutel
+	double suremus;				//suremus, praegu ei kasutata, vÃ¤Ã¤rtus on praegu 1.0
+	double nakatumus;			//nakatumus, kui suure tÃµenÃ¤osusega viirus kandub edasi Ã¼hekordsel kokkupuutel
 
 	public Viirus(double Suremus, double Nakatumus) {
 
